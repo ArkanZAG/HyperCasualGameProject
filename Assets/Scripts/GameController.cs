@@ -8,17 +8,24 @@ public class GameController : MonoBehaviour
     [SerializeField] private bool isPlaying = true;
     [SerializeField] private int score;
     [SerializeField] private GameOverScreen gameOverScreen;
-    public static GameController Instance;
+    [SerializeField] private Animator playerAnimator;
+        public static GameController Instance;
 
     private void Awake()
     {
         Instance = this;
     }
 
+    public bool GetIsPlaying()
+    {
+        return isPlaying;
+    }
+
     public void StopGame()
     {
         isPlaying = false;
         gameOverScreen.Display(score);
+        playerAnimator.SetTrigger("Dead");
     }
 
     public void AddScore(int value)

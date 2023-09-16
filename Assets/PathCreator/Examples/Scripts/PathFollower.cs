@@ -21,7 +21,7 @@ namespace PathCreation.Examples
 
         void Update()
         {
-            if (pathCreator != null)
+            if (pathCreator != null && GameController.Instance.GetIsPlaying())
             {
                 distanceTravelled += speed * Time.deltaTime;
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);

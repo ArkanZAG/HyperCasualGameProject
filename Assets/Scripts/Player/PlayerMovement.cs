@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float limitValue;
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && GameController.Instance.GetIsPlaying())
         {
             MovePlayer();
         }
