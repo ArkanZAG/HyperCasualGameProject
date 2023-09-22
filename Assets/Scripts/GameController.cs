@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private bool isPlaying = true;
     [SerializeField] private int score;
     [SerializeField] private GameOverScreen gameOverScreen;
+    [SerializeField] private FinishScreen finishScreen;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private GameObject finishLine;
         public static GameController Instance;
@@ -31,7 +32,8 @@ public class GameController : MonoBehaviour
 
     public void Finish()
     {
-        
+        isPlaying = false;
+        finishScreen.Display(score);
     }
 
     public void AddScore(int value)
