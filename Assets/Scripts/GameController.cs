@@ -34,11 +34,17 @@ public class GameController : MonoBehaviour
     {
         isPlaying = false;
         finishScreen.Display(score);
+        playerAnimator.SetTrigger("Victory");
     }
 
     public void AddScore(int value)
     {
         score = score + value;
+    }
+
+    public void StartGame()
+    {
+        
     }
 
 }
