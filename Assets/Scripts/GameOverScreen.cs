@@ -21,7 +21,7 @@ public class GameOverScreen : MonoBehaviour
 
    private void OnRetry()
    {
-      SceneManager.LoadScene(0);
+      SceneManager.LoadScene("Game");
    }
 
    public void Display(int score)

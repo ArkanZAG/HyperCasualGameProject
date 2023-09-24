@@ -19,15 +19,22 @@ public class FinishScreen : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         restartButton.onClick.AddListener(OnRetry);
+        mainMenuButton.onClick.AddListener(MainMenu);
+    }
+
+    private void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void OnRetry()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Game");
     }
 
     public void Display(int score)
     {
+        this.gameObject.SetActive(true);
         scoreText.text = score.ToString();
     }
 
